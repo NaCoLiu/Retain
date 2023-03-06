@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "code";
+    src: url("../font/code.woff2");
+    font-weight: normal;
+  }
+
+  @font-face {
+    font-family: "sans";
+    src: url("../font/Sans-Medium.woff2");
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: "sans";
+    src: url("../font/Sans-Medium.woff2");
+    font-weight: bold;
+  }
+
+  html {
+    font-family: "code", "sans";
+    user-select: none;
+  }
+}
+
+:root {
+  --var-blue: rgb(52, 152, 219);
+  --var-gray: rgb(243, 243, 243);
+}
