@@ -8,8 +8,8 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "icon",
-          type: "ico",
-          href: "./favicon.ico",
+          type: "image/x-icon",
+          href: "/favicon.ico",
         },
       ],
       meta: [
