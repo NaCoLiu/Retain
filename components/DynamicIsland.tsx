@@ -9,7 +9,7 @@ export default defineComponent({
     };
     return () => (
       <div
-        class="dynamicIsland cursor-pointer fixed top-10 text-xs bg-black dark:bg-white rounded-full text-white dark:text-black pl-10 pr-10 pt-2 pb-2"
+        class="dynamicIsland cursor-pointer fixed center top-8 text-xs bg-black dark:bg-white rounded-full text-white dark:text-black pl-10 pr-10 pt-2 pb-2"
         onClick={changeTheme}
       >
         <div class="content flex flex-row justify-center">

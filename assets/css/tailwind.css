@@ -25,6 +25,11 @@
     font-family: "code", "sans";
     user-select: none;
   }
+
+  .main{
+    display:flex;
+    justify-content: center;
+  }
 }
 
 :root {
