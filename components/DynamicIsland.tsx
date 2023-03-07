@@ -13,7 +13,7 @@ export default defineComponent({
         onClick={changeTheme}
       >
         <div class="content flex flex-row justify-center">
-          Welcome. <div class="hover pl-2">Pry into life.</div>
+          <div class="pl-2">Pry into whose life.</div>
         </div>
       </div>
     );
