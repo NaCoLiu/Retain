@@ -24,7 +24,7 @@ export const nav: NavType[] = [
   {
     icon: "material-symbols:alternate-email-sharp",
     name: "Mail",
-    url: "mailto://naco@nco.im",
+    url: "mailto:naco@nco.im",
   },
   {
     icon: "uil:instagram",
