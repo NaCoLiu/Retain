@@ -1,10 +1,16 @@
 import { NuxtLink, Icon } from "#components";
 import { BlogNav } from "~~/mock";
+import { useCategorie } from "~~/stores/blog/categories";
+import { useMenu } from "~~/stores/blog/menus";
+import '~/assets/css/nav.scss'
 export default defineComponent({
   name: "Nav",
   setup(props, ctx) {
-    const meta = useRoute().meta;
-    console.log(meta);
+    const menu = useMenu();
+    onMounted(async () => {
+      await menu.onInit();
+    });
+    const route = useRoute();
     return () => (
       <div class="nav col-span-1 bg-gray-50">
         <div class="header pl-8 pr-8 pt-5 pb-5 text-slate-500 text-lg border-solid border-b border-indigo-100/70">
@@ -12,12 +18,18 @@ export default defineComponent({
         </div>
         <div class="nav-group pl-5 pr-5 mb-4 mt-3">
           <div class="mt-2 nav-item text-sm  text-slate-500 dark:text-black  dark:hover:bg-white rounded-md cursor-pointer">
-            {BlogNav.map((i) => {
+            {menu.menuDetails?.items.map((i) => {
               return (
-                <div class="mt-2 nav-item text-sm text-slate-500 dark:text-black hover:bg-slate-300/30  dark:hover:bg-white rounded-md cursor-pointer">
+                <div
+                  class={{
+                    checked: route.path === i.url,
+                    "mt-2 nav-item text-sm text-slate-500 dark:text-black hover:bg-slate-300/30  dark:hover:bg-white rounded-md cursor-pointer":
+                      true,
+                  }}
+                >
                   <NuxtLink class="pt-2 pb-2 block font-bold" href={i.url}>
-                    <Icon name="uil:telegram" size="25" class="ml-2 mr-2" />
-                    {i.name}
+                    <Icon name={i.attr_title} size="25" class="ml-2 mr-2" />
+                    {i.title}
                   </NuxtLink>
                 </div>
               );

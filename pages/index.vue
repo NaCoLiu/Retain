@@ -1,6 +1,5 @@
 <template>
     <div class="w-screen h-screen justify-center items-center flex flex-col dark:bg-black">
-        
         <div class="p-10 text-4xl font-bold tracking-wider text-center dark:text-white">
             Hi, I am NaCo! (<a href="https://github.com/nacoliu" class="dark:text-slate-500 text-blue-400 tracking-normal"
                 target="_blank">@NaCoLiu.</a>)
@@ -19,7 +18,7 @@ import { nav } from "../mock";
 import { useTheme } from "../stores/theme";
 const themeStore = useTheme();
 
-onMounted(() => {
+onMounted(async () => {
     themeStore.onInit();
 })
 

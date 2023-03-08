@@ -1,7 +1,12 @@
 import { Icon } from "#components";
+import { useCategorie } from "~~/stores/blog/categories";
 export default defineComponent({
   name: "Main",
   setup() {
+    const categorie = useCategorie();
+    onMounted(async () => {
+      await categorie.onInit();
+    });
     return () => (
       <div class="bg-white col-span-2">
         <div class="header pl-5 pt-2 pb-2 mt-2.5 mb-2.5">
@@ -42,15 +47,14 @@ export default defineComponent({
           <span class="text-xs bg-slate-500 text-white pl-2 pr-2 pt-1 pb-1 rounded-md cursor-pointer">
             全部
           </span>
-          <span class="text-xs bg-slate-200 text-gray-600 pl-2 pr-2 pt-1 pb-1 rounded-md cursor-pointer">
-            默认文章
-          </span>
-          <span class="text-xs bg-slate-200 text-gray-600 pl-2 pr-2 pt-1 pb-1 rounded-md cursor-pointer">
-            Emotion
-          </span>
-          <span class="text-xs bg-slate-200 text-gray-600 pl-2 pr-2 pt-1 pb-1 rounded-md cursor-pointer">
-            技术
-          </span>
+
+          {categorie.categories.map((i) => {
+            return (
+              <span class="text-xs bg-slate-200 text-gray-600 pl-2 pr-2 pt-1 pb-1 rounded-md cursor-pointer">
+                {i.name}
+              </span>
+            );
+          })}
         </div>
         <div class="post">
           <div class="p-8">

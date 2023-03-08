@@ -1,5 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+console.log('proxy server : ' + process.env.VITE_API_HOST)
 export default defineNuxtConfig({
+  nitro: {
+    devProxy: {
+      "/api": {
+        target: process.env.VITE_API_HOST,
+        changeOrigin: true,
+      },
+    },
+  },
   app: {
     head: {
       charset: "utf-8",
