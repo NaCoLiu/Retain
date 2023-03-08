@@ -1,11 +1,13 @@
 import { Icon } from "#components";
 import { useCategorie } from "~~/stores/blog/categories";
+import { useUserInfo } from "~~/stores/blog/userinfo";
 export default defineComponent({
   name: "Main",
   setup() {
     const categorie = useCategorie();
+    const user = useUserInfo();
     onMounted(async () => {
-      await categorie.onInit();
+      await Promise.all([user.onInit(), categorie.onInit()]);
     });
     return () => (
       <div class="bg-white col-span-2">
@@ -33,12 +35,12 @@ export default defineComponent({
           <div class="info absolute bottom-4 right-4">
             <div class="text-white flex items-center">
               <div class="mr-2">
-                <div>NaCo</div>
-                <div class="text-xs">相聚别离。</div>
+                <div class="text-right">{user.userinfo?.name}</div>
+                <div class="text-xs">{user.userinfo?.description}</div>
               </div>
               <img
-                src="https://avatars.githubusercontent.com/u/42311502?v=4"
-                class="w-14 h-14 rounded-md"
+                src={user.userinfo?.avatar_urls[96]}
+                class="w-14 h-14 rounded-md bg-slate-400"
               />
             </div>
           </div>

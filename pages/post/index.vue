@@ -4,7 +4,7 @@
             <div class="grid-flow-col grid-cols-4 grid bg-slate-200 overflow-hidden rounded-lg dark:bg-gray-800">
                 <BasicNav />
                 <BasicMain />
-                <div clas="col-span-1">3</div>
+                <div clas="col-span-1"></div>
             </div>
         </div>
     </div>

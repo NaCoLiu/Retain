@@ -27,8 +27,8 @@ export default defineComponent({
                       true,
                   }}
                 >
-                  <NuxtLink class="pt-2 pb-2 block font-bold" href={i.url}>
-                    <Icon name={i.attr_title} size="25" class="ml-2 mr-2" />
+                  <NuxtLink class="pt-2 pb-2  font-bold flex items-center" href={i.url}>
+                    <Icon name={i.attr_title} size="25" class="ml-2 mr-4" />
                     {i.title}
                   </NuxtLink>
                 </div>

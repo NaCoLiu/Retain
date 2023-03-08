@@ -23,3 +23,10 @@ export const fetchMenusBySlug = async (_slug: string) => {
   );
   if (result.data.value) return result.data.value;
 };
+
+export const fetchUserInfo = async (_id: string) => {
+  const result = await useAsyncData<UserInfoType>(() =>
+    $fetch(`/api/wp/v2/users/${_id}`)
+  );
+  if (result.data.value) return result.data.value;
+};
