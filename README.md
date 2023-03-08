@@ -1,7 +1,13 @@
 # Retain
 Blog theme , Power By Nuxt &amp; Wordpress.
 
-![theme preview](https://raw.githubusercontent.com/NaCoLiu/Retain/main/readme.png)
+### Guide Page
+
+![theme preview](https://raw.githubusercontent.com/NaCoLiu/Retain/main/home.png)
+
+### Blog Page
+
+![blog preview](https://raw.githubusercontent.com/NaCoLiu/Retain/main/blog.png)
 
 # features
 
