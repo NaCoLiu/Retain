@@ -1,4 +1,4 @@
-import { Icon } from '#components'
+import { Icon } from "#components";
 export default defineComponent({
   name: "Main",
   setup() {
@@ -21,9 +21,9 @@ export default defineComponent({
         </div>
         <div class="banner h-52 flex justify-center items-center relative overflow-hidden">
           <img
-            src="https://img0.baidu.com/it/u=180973251,3201597544&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500"
-            alt=""
-            class="blur-sm scale-105 grayscale w-max"
+            src="https://www.z4a.net/images/2023/03/08/5dad28bf1791e8403156f42c7ab821f.jpg"
+            alt="banner-bg"
+            class="blur-sm object-contain scale-105"
           />
           <div class="info absolute bottom-4 right-4">
             <div class="text-white flex items-center">
@@ -38,7 +38,47 @@ export default defineComponent({
             </div>
           </div>
         </div>
-        <div class="tag"></div>
+        <div class="p-5 flex gap-x-2 gap-y-2 border-b border-gray-100">
+          <span class="text-xs bg-slate-500 text-white pl-2 pr-2 pt-1 pb-1 rounded-md cursor-pointer">
+            全部
+          </span>
+          <span class="text-xs bg-slate-200 text-gray-600 pl-2 pr-2 pt-1 pb-1 rounded-md cursor-pointer">
+            默认文章
+          </span>
+          <span class="text-xs bg-slate-200 text-gray-600 pl-2 pr-2 pt-1 pb-1 rounded-md cursor-pointer">
+            Emotion
+          </span>
+          <span class="text-xs bg-slate-200 text-gray-600 pl-2 pr-2 pt-1 pb-1 rounded-md cursor-pointer">
+            技术
+          </span>
+        </div>
+        <div class="post">
+          <div class="p-8">
+            <div class="flex flex-col">
+              <div class="flex">
+                <img
+                  src="https://avatars.githubusercontent.com/u/42311502?v=4"
+                  class="w-14 h-14 rounded-md"
+                />
+                <div class="pl-5 flex flex-col flex-1">
+                  <div class="flex justify-between ">
+                    <div class="text-slate-500 cursor-pointer text-base font-bold">
+                      你好，世界。
+                    </div>
+                    <div class="text-xs text-gray-500">2023年03月08日</div>
+                  </div>
+                  <div class="text-gray-500 text-xs flex-grow">NaCo</div>
+                  <p class=" text-slate-500 pt-3 pb-3 font-bold text-sm">
+                    这是一篇由Wordpress默认创建的文章，您可以自行删除。
+                  </p>
+                  <div class="tag text-slate-400 text-xs">
+                    <Icon name="carbon:tag" /> Under my emotion
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   },

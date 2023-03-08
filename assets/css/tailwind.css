@@ -11,8 +11,8 @@
 
   @font-face {
     font-family: "sans";
-    src: url("../font/Sans-Medium.woff2");
-    font-weight: bold;
+    src: url("../font/Sans-Regular.woff2");
+    font-weight: normal;
   }
 
   @font-face {
@@ -26,8 +26,8 @@
     user-select: none;
   }
 
-  .main{
-    display:flex;
+  .main {
+    display: flex;
     justify-content: center;
   }
 }
