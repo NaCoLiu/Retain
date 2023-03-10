@@ -78,7 +78,9 @@ export default defineComponent({
                           <div class="text-slate-500 cursor-pointer text-base font-bold">
                             {e.title.rendered}
                           </div>
-                          <div class="text-xs text-gray-500">{formatTime(e.date)}</div>
+                          <div class="text-xs text-gray-500">
+                            {formatTime(e.date)}
+                          </div>
                         </div>
                         <div class="text-gray-500 text-xs flex-grow">
                           {e.userinfo?.name}
@@ -90,14 +92,19 @@ export default defineComponent({
 
                         <div class="text-xs text-slate-500 rounded-sm flex p-3 justify-between items-center bg-slate-200 font-bold">
                           <div class="cursor-pointer">查看全文</div>
-                          <div class="cursor-pointer flex items-center">
-                          {e.taginfo ? (
-                                <div class="tag  text-xs pr-3">
-                                  <Icon name="carbon:tag" /> {e.taginfo?.name}
-                                </div>
-                              ) : null}
-                            <Icon name="mdi:comment-text-multiple" class="mr-2" />{" "}
-                            {e.comments?.length ? e.comments?.length : 0}
+                          <div class=" flex items-center">
+                            {e.taginfo ? (
+                              <div class="tag font-thin text-xs pr-3">
+                                <Icon name="carbon:tag" /> {e.taginfo?.name}
+                              </div>
+                            ) : null}
+                            <div class="cursor-pointer">
+                              <Icon
+                                name="mdi:comment-text-multiple"
+                                class="mr-2"
+                              />
+                              {e.comments?.length ? e.comments?.length : 0}
+                            </div>
                           </div>
                         </div>
                       </div>

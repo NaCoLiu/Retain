@@ -4,7 +4,7 @@
             <div class="grid-flow-col grid-cols-4 grid overflow-hidden rounded-lg ">
                 <BasicNav />
                 <BasicMain />
-               
+                <BasicSiderBar />
             </div>
         </div>
     </div>

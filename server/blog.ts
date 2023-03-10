@@ -49,15 +49,13 @@ export const fetchTagById = async (_id: number) => {
 };
 
 export const fetchCommentsByPostId = async (id: number) => {
-  const result = await useAsyncData<CommentsType[]>(
-    async () =>
-      await $fetch("/api/wp/v2/comments", {
-        method: "GET",
-        params: {
-          post: id,
-        },
-      })
-  );
-
+  console.log(id);
+  const result = await useLazyFetch<CommentsType[]>("/api/wp/v2/comments", {
+    method: "GET",
+    params: {
+      post: id,
+    },
+  });
+  console.log(result);
   if (result.data.value) return result.data.value;
 };

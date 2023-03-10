@@ -1,5 +1,6 @@
 import { NuxtLink, Icon } from "#components";
 import { useMenu } from "~~/stores/blog/menus";
+
 export default defineComponent({
   name: "Nav",
   setup(props, ctx) {
@@ -19,7 +20,8 @@ export default defineComponent({
               return (
                 <div
                   class={{
-                    checked: route.path === i.url,
+                    checked: route.path === i.url ? true : false,
+                    
                     "mt-2 nav-item text-sm text-slate-500 dark:text-black hover:bg-slate-300/30  dark:hover:bg-white rounded-md cursor-pointer":
                       true,
                   }}

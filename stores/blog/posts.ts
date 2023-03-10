@@ -19,7 +19,6 @@ export const usePost = defineStore("post", {
       }
       this.postList.map(async (e) => {
         e.userinfo = await fetchUserInfo(e.author);
-        console.log(e.id)
         e.comments = await fetchCommentsByPostId(e.id);
         if (e.tags.length > 0) e.taginfo = await fetchTagById(e.tags[0]);
       });
