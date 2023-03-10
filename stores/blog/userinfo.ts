@@ -7,7 +7,7 @@ export const useUserInfo = defineStore("userInfo", {
   actions: {
     async onInit() {
       try {
-        const result = await fetchUserInfo("1");
+        const result = await fetchUserInfo(1);
         if (result) this.userinfo = result;
       } catch {
       } finally {

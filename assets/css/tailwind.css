@@ -20,20 +20,5 @@
     src: url("../font/Sans-Medium.woff2");
     font-weight: bold;
   }
-
-  html {
-    font-family: "code", "sans";
-    user-select: none;
-  }
-
-  .main {
-    display: flex;
-    justify-content: center;
-  }
-  
 }
 
-:root {
-  --var-blue: rgb(52, 152, 219);
-  --var-gray: rgb(243, 243, 243);
-}

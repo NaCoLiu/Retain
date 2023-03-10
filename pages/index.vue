@@ -16,6 +16,7 @@
 <script lang="ts" setup>
 import { nav } from "../mock";
 import { useTheme } from "../stores/theme";
+import { openUrl } from "~~/utils/tools";
 const themeStore = useTheme();
 
 onMounted(async () => {

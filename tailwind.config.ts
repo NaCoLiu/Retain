@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import clamp from "@tailwindcss/line-clamp";
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -9,6 +10,5 @@ module.exports = {
     "./nuxt.config.{js,ts}",
     "./app.vue",
   ],
-  
-  plugins: [],
+  plugins: [clamp],
 };

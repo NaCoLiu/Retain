@@ -1,5 +1,5 @@
 # Retain
-Blog theme , Power By Nuxt &amp; Wordpress.
+Blog theme, Power By Nuxt &amp; Wordpress. Inspired by Pixit.
 
 ### Guide Page
 

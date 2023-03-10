@@ -1,5 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-console.log('proxy server : ' + process.env.VITE_API_HOST)
 export default defineNuxtConfig({
   nitro: {
     devProxy: {
@@ -42,6 +41,6 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  css: ["~/assets/css/tailwind.css"],
+  css: ["~/assets/css/tailwind.css", "~/assets/css/main.scss"],
   modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "@pinia/nuxt"],
 });

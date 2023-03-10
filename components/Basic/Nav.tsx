@@ -1,8 +1,5 @@
 import { NuxtLink, Icon } from "#components";
-import { BlogNav } from "~~/mock";
-import { useCategorie } from "~~/stores/blog/categories";
 import { useMenu } from "~~/stores/blog/menus";
-import '~/assets/css/nav.scss'
 export default defineComponent({
   name: "Nav",
   setup(props, ctx) {

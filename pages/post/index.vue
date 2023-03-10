@@ -1,10 +1,10 @@
 <template>
-    <div class="post w-screen h-screen dark:bg-black bg-slate-100 p-0 overflow-hidden">
+    <div class="post w-screen h-screen  p-0">
         <div class="container pt-28 max-w-6xl m-auto">
-            <div class="grid-flow-col grid-cols-4 grid bg-slate-200 overflow-hidden rounded-lg dark:bg-gray-800">
+            <div class="grid-flow-col grid-cols-4 grid overflow-hidden rounded-lg ">
                 <BasicNav />
                 <BasicMain />
-                <div clas="col-span-1"></div>
+               
             </div>
         </div>
     </div>

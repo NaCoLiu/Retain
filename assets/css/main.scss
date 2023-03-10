@@ -1,0 +1,27 @@
+html {
+  font-family: "code", "sans";
+  user-select: none;
+}
+body {
+  background: #d7d7d75c;
+}
+.dark {
+  body {
+    background: rgb(22, 22, 22);
+  }
+}
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+:root {
+  --var-blue: rgb(52, 152, 219);
+  --var-gray: rgb(243, 243, 243);
+}
+
+.nav {
+  .checked {
+    background-color: rgb(100 116 139 / 15%);
+  }
+}

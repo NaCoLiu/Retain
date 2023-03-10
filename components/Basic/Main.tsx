@@ -1,13 +1,15 @@
 import { Icon } from "#components";
 import { useCategorie } from "~~/stores/blog/categories";
+import { usePost } from "~~/stores/blog/posts";
 import { useUserInfo } from "~~/stores/blog/userinfo";
 export default defineComponent({
   name: "Main",
   setup() {
     const categorie = useCategorie();
     const user = useUserInfo();
+    const post = usePost();
     onMounted(async () => {
-      await Promise.all([user.onInit(), categorie.onInit()]);
+      await Promise.all([user.onInit(), categorie.onInit(), post.onInit()]);
     });
     return () => (
       <div class="bg-white col-span-2">
@@ -38,10 +40,12 @@ export default defineComponent({
                 <div class="text-right">{user.userinfo?.name}</div>
                 <div class="text-xs">{user.userinfo?.description}</div>
               </div>
-              <img
-                src={user.userinfo?.avatar_urls[96]}
-                class="w-14 h-14 rounded-md bg-slate-400"
-              />
+              {user.userinfo ? (
+                <img
+                  src={user.userinfo?.avatar_urls[96]}
+                  class="w-14 h-14 rounded-md bg-slate-400"
+                />
+              ) : null}
             </div>
           </div>
         </div>
@@ -59,31 +63,50 @@ export default defineComponent({
           })}
         </div>
         <div class="post">
-          <div class="p-8">
-            <div class="flex flex-col">
-              <div class="flex">
-                <img
-                  src="https://avatars.githubusercontent.com/u/42311502?v=4"
-                  class="w-14 h-14 rounded-md"
-                />
-                <div class="pl-5 flex flex-col flex-1">
-                  <div class="flex justify-between ">
-                    <div class="text-slate-500 cursor-pointer text-base font-bold">
-                      你好，世界。
+          {post.postList.map((e) => {
+            return (
+              <div class="p-8">
+                <div class="flex flex-col">
+                  {e.userinfo ? (
+                    <div class="flex">
+                      <img
+                        src={e.userinfo?.avatar_urls[96]}
+                        class="w-14 h-14 rounded-md"
+                      />
+                      <div class="pl-5 flex flex-col flex-1">
+                        <div class="flex justify-between ">
+                          <div class="text-slate-500 cursor-pointer text-base font-bold">
+                            {e.title.rendered}
+                          </div>
+                          <div class="text-xs text-gray-500">{formatTime(e.date)}</div>
+                        </div>
+                        <div class="text-gray-500 text-xs flex-grow">
+                          {e.userinfo?.name}
+                        </div>
+                        <p
+                          class=" text-slate-500 mt-3 mb-3 text-sm overflow-hidden line-clamp-5"
+                          v-html={e.content.rendered}
+                        />
+
+                        <div class="text-xs text-slate-500 rounded-sm flex p-3 justify-between items-center bg-slate-200 font-bold">
+                          <div class="cursor-pointer">查看全文</div>
+                          <div class="cursor-pointer flex items-center">
+                          {e.taginfo ? (
+                                <div class="tag  text-xs pr-3">
+                                  <Icon name="carbon:tag" /> {e.taginfo?.name}
+                                </div>
+                              ) : null}
+                            <Icon name="mdi:comment-text-multiple" class="mr-2" />{" "}
+                            {e.comments?.length ? e.comments?.length : 0}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="text-xs text-gray-500">2023年03月08日</div>
-                  </div>
-                  <div class="text-gray-500 text-xs flex-grow">NaCo</div>
-                  <p class=" text-slate-500 pt-3 pb-3 font-bold text-sm">
-                    这是一篇由Wordpress默认创建的文章，您可以自行删除。
-                  </p>
-                  <div class="tag text-slate-400 text-xs">
-                    <Icon name="carbon:tag" /> Under my emotion
-                  </div>
+                  ) : null}
                 </div>
               </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     );
